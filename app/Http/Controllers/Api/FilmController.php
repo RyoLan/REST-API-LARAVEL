@@ -24,7 +24,7 @@ class FilmController extends Controller
         $validate = Validator::make($request->all(), [
             'judul'=> 'required|string|unique:films',
             'deskripsi'=> 'required|string',
-            'foto'=> 'required|image|mimes:png,jpg,jpeg,gif,svg|max:2048',
+            'foto'=> 'required|image|max:2048',
             'url_vidio'=> 'required|string',
             'id_kategori'=> 'required|exists:kategoris,id',
             'genre'=> 'required',
@@ -91,7 +91,7 @@ class FilmController extends Controller
         $validate = Validator::make($request->all(), [
             'judul'=> 'required|string|unique:films' . $id,
             'deskripsi'=> 'required|string',
-            'foto'=> 'required|image|mimes:png,jpg,jpeg,gif,svg|max:2048',
+            'foto'=> 'required|image|max:2048',
             'url_vidio'=> 'required|string',
             'id_kategori'=> 'required|exists:kategoris,id',
             'genre'=> 'required|array',
